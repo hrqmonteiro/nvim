@@ -1,16 +1,15 @@
 (local options {:always_divide_middle true
-       :component_separators {:left "" :right ""}
-       :disabled_filetypes {:statusline {} :winbar {}}
-       :globalstatus true
-       :icons_enabled true
-       :ignore_focus {}
-       :refresh {:statusline 1000 :tabline 1000 :winbar 1000}
-       :section_separators {:left "" :right ""}
-       :theme :auto})	
+                :component_separators {:left "" :right ""}
+                :disabled_filetypes {:statusline {} :winbar {}}
+                :extensions ["lazy" "mason" "neo-tree"]
+                :globalstatus true
+                :icons_enabled true
+                :ignore_focus {}
+                :refresh {:statusline 1000 :tabline 1000 :winbar 1000}
+                :section_separators {:left "" :right ""}
+                :theme :auto})                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   	
 
-(local icons (require :config.icons))
-
-(λ border [padding]
+(fn border [padding]
    {1 (fn [] " ") :color {:fg ""} : padding :separator ""})
 
 (fn file-name-component []
@@ -23,22 +22,21 @@
 
 (fn mode-component []
   (let [mode (vim.fn.mode)
-             mode-map {"\022" :V-BLK
-             :R :REP
-             :V :V-LINE
-             :c :CMD
-             :i :INS
-             :n :NOR
-             :t :TERM
-             :v :VIS}]
-
+             mode-map {"\022" "V-BLK"
+                       :R "REP"
+                       :V "V-LINE"
+                       :c "CMD"
+                       :i "INS"
+                       :n "NOR"
+                       :t "TER"
+                       :v "VIS"}]
     (or (. mode-map mode) mode)))
 
 (fn lsp-server-component []
-  (let [clients (vim.lsp.get_active_clients)]
-    (when (= (length clients) 0) (lua "return \" No LSP \""))
-    (local last-client (. clients (length clients)))
-    (.. icons.ui.Gear " " last-client.name)))
+  (let [clients (vim.lsp.get_active_clients)
+        server-names {}]
+    (each [_ client (ipairs clients)] (table.insert server-names client.name))
+    (if (= (length server-names) 0) "No LSP" (table.concat server-names ", "))))
 
 (fn git-branch-component []
   (let [handle (io.popen "git rev-parse --abbrev-ref HEAD 2>/dev/null")
@@ -47,33 +45,41 @@
     (when (= branch-name "") (lua "return \"\""))
     (local branch-icon "")
     (local branch-highlight :lualine_b_normal)
-    (.. "%#" branch-highlight "#" branch-icon " " branch-name)))
+    (.. branch-icon " " branch-name)))
 
 (local sections {:lualine_a [mode-component]
-       :lualine_b [git-branch-component]
-       :lualine_c [
-                   (border {:right 1})
-                   {1 :filetype
-                   :icon {:align :right}
-                   :padding 0
-                   :icon_only true}
-                   {1
-                   file-name-component
-                   :padding 0
-                   }
-                   :location
-                   :progress
-                   "diff"
-                   ]
-       :lualine_x [lsp-server-component "diagnostics"]
-       :lualine_y []
-       :lualine_z []})
+                 :lualine_b []
+                 :lualine_c [
+                             (border {:right 1})
+                             "filesize"
+                             (border {:right 1})
+                             {1 :filetype
+                              :icon {:align :right}
+                              :padding 0
+                              :icon_only true}
+                             {1
+                              file-name-component
+                              :padding 0}
+                   
+                             (border {:right 1})
+                             {1
+                              :location
+                              :padding 0}
+                   
+                             (border {:right 1})
+                             {1
+                              :progress
+                              :padding 0}
+                   
+                             (border {:right 1})
+                             "diff"]
+                   
+                 :lualine_x [lsp-server-component (border {:right 1}) {1 :diagnostics :always_visible true :sections ["error" "warn" "info"]} (border {:right 1}) git-branch-component ]
+                 :lualine_y []
+                 :lualine_z []})
 
-[
- {1 "nvim-lualine/lualine.nvim"
- :dependencies ["nvim-tree/nvim-web-devicons"]
- :opts
- {:options options
- :sections sections}
-
- }]
+[{1 "nvim-lualine/lualine.nvim"
+    :dependencies ["nvim-tree/nvim-web-devicons"]
+    :opts
+    {:options options
+     :sections sections}}]

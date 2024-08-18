@@ -149,6 +149,7 @@
                                                      (lua "return false"))
                                                    true)
                                    :name :nvim_lsp}
+                                  {:name :conjure}
                                   {:name :path}
                                   {:name :luasnip}
                                   {:name :cmp_tabnine}

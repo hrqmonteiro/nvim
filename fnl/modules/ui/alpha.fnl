@@ -94,12 +94,12 @@
                                     :opts {:hl :Decorator :position :center}
                                     :type :button
                                     :val ""}})
-            (alpha.setup {:layout [{:type :padding :val 4}
+            (alpha.setup {:layout [{:type :padding :val 1}
                                    sections.header
-                                   ; {:type :padding :val 1}
-                                   ; sections.buttons
-                                   ; {:type :padding :val 1}
-                                   ; sections.footer
-                                   {:type :padding :val 4}
+                                   {:type :padding :val 1}
+                                   sections.buttons
+                                   {:type :padding :val 1}
+                                   sections.footer
+                                   {:type :padding :val 1}
                                    ; sections.icon
                                    ]}))}]
