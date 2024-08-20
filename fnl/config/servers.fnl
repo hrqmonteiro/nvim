@@ -6,7 +6,6 @@
  :eslint
  :emmet_language_server
  :fennel_ls
- :gopls
  :graphql
  :html
  :jsonls
@@ -20,5 +19,5 @@
  :templ
  :tsserver
  :lemminx
- :yamlls]	
+ :yamlls]    	
 

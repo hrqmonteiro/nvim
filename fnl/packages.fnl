@@ -1,36 +1,78 @@
 (import-macros {: packages!} :macros)
 
 (packages!
-  :ui [
-       "alpha" 
-       "auto-dark-mode"
-       "colorscheme"
-       "gitsigns"
-       "hydra"
-       "lualine"
-       "neo-tree"
-       "noice" 
-       "web-devicons"
-       "which-key"
-       ]
+  :completion
+    cmp
+    [telescope +native]
 
-  :completion [
-               "cmp"
-               "telescope"
-               ]
+  :editor
+    parinfer
+    tangerine
+  
+  :term
+    toggleterm
 
-  :lsp [
-        "lspconfig"
-        "mason"
-        "nvim-lightbulb"
-        ]
+  :lang
+    bash
+    ;cc
+    css
+    clojure
+    ;crystal
+    ;[dart +flutter]
+    [docker +compose]
+    ;elixir
+    fennel
+    [go +templ]
+    graphql
+    ;haskell
+    [html +emmet +htmx +xml]
+    json
+    ;java
+    ;kotlin
+    ;latex
+    lua
+    [markdown +mdx]
+    ;nim
+    ;nix
+    ;ocaml
+    ;php
+    ;python
+    ;ruby
+    rust
+    ;scala
+    ;solidity
+    sql
+    ;swift
+    tailwindcss
+    toml
+    [typescript +angular +astro +eslint +prisma +svelte +vue]
+    yaml
+    ;zig
 
-  :tools [
-          "conjure"
-          "neogit"
-          "neorg"
-          "tangerine"
-          "tmux-navigator"
-          "toggleterm"
-          "treesitter"
-          ])
+  :lsp
+    lspconfig
+    mason
+    nvim-lightbulb
+
+  :tools
+    conjure
+    colorizer
+    editorconfig
+    [neogit +octo]
+    neorg
+    tmux-navigator
+    treesitter
+
+  :ui
+    alpha
+    auto-dark-mode
+    colorscheme
+    gitsigns
+    hydra
+    indent-lines
+    lualine
+    neo-tree
+    noice
+    todo-comments
+    web-devicons
+    which-key)

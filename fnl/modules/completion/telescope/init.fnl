@@ -19,11 +19,13 @@
                                                                              (vim.api.nvim_put [emoji.value]
                                                                                                :c
                                                                                                false
-                                                                                               true))}}
+                                                                                               true))}
+                                                            :fzf {:fuzzy true :case_mode :ignore_case}}
                                               :pickers {:oldfiles {:prompt_title "Recent Files"}}})
             ((. (require :telescope) :load_extension) :bookmarks)
             ((. (require :telescope) :load_extension) :emoji)
             ((. (require :telescope) :load_extension) :file_browser)
+            ((. (require :telescope) :load_extension) :fzf)
             ((. (require :telescope) :load_extension) :media)
             ((. (require :telescope) :load_extension) :telescope-tabs)
             ((. (require :telescope) :load_extension) :ui-select)
@@ -72,4 +74,4 @@
                  :nvim-telescope/telescope-ui-select.nvim
                  :nvim-telescope/telescope-file-browser.nvim
                  :dharmx/telescope-media.nvim
-                 :LukasPietzschmann/telescope-tabs]}]	
+                 :LukasPietzschmann/telescope-tabs]}]                                                                                                                                                                                                                      	

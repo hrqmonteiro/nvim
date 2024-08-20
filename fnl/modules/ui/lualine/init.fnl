@@ -7,7 +7,7 @@
                 :ignore_focus {}
                 :refresh {:statusline 1000 :tabline 1000 :winbar 1000}
                 :section_separators {:left "" :right ""}
-                :theme :auto})                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   	
+                :theme :auto})                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       	
 
 (fn border [padding]
    {1 (fn [] " ") :color {:fg ""} : padding :separator ""})
@@ -74,12 +74,11 @@
                              (border {:right 1})
                              "diff"]
                    
-                 :lualine_x [lsp-server-component (border {:right 1}) {1 :diagnostics :always_visible true :sections ["error" "warn" "info"]} (border {:right 1}) git-branch-component ]
+                 :lualine_x [lsp-server-component (border {:right 1}) {1 :diagnostics :always_visible true :sections ["error" "warn" "info"]} (border {:right 1}) git-branch-component]
                  :lualine_y []
                  :lualine_z []})
 
 [{1 "nvim-lualine/lualine.nvim"
-    :dependencies ["nvim-tree/nvim-web-devicons"]
     :opts
     {:options options
      :sections sections}}]
