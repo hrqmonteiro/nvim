@@ -1,1 +1,3 @@
-lua
+/lua/
+
+!fnl/modules/lang/lua/
