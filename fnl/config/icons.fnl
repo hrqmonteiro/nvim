@@ -72,7 +72,7 @@
     :Calendar ""
     :Check ""
     :ChevronRight ""
-    :ChevronShortDown ""
+    :ChevronShortDown ""
     :ChevronShortLeft ""
     :ChevronShortRight ""
     :ChevronShortUp ""

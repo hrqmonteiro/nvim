@@ -1,2 +1,10 @@
 [{1 :folke/todo-comments.nvim
-    :dependencies ["nvim-lua/plenary.nvim"]}]
+    :lazy false
+    :config (fn []
+              (local todo-comments (require :todo-comments))
+
+              (todo-comments.setup
+                {}))
+    :opts {:signs true}}]
+
+; TODO

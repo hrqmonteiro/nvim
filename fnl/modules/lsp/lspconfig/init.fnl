@@ -29,8 +29,8 @@
         (when subdir (local subdir-path (.. base-path "/" lang "/" subdir))
           (process-files subdir-path {} servers))))))
 (fn setup-lspconfig []
-  (let [packages (require :packages)
-        lang-folders (or packages.lang {})
+  (let [modules (require :modules)
+        lang-folders (or modules.lang {})
         servers {}]
     (each [_ lang (ipairs lang-folders)]
       (local base-path :lua/modules/lang)

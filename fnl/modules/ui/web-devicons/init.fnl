@@ -1595,6 +1595,9 @@
                                                                            :cterm_color :52
                                                                            :icon ""
                                                                            :name :Podfile}
+                                                                 :NeogitStatus {:color "#CB3E44"
+                                                                                :cterm_color :52
+                                                                                :icon ""}
                                                                  :plist {:color "#6d8086"
                                                                          :cterm_color :66
                                                                          :icon ""

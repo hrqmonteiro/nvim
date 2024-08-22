@@ -31,8 +31,8 @@
 (fn setup-mason []
   (let [mason (require :mason)
         mason-lspconfig (require :mason-lspconfig)
-        packages (require :packages)
-        lang-folders (or packages.lang {})
+        modules (require :modules)
+        lang-folders (or modules.lang {})
         servers {}]
     (each [_ lang (ipairs lang-folders)]
       (local base-path :lua/modules/lang)

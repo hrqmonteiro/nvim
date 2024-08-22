@@ -1,3 +1,3 @@
-[{1 "udayvir-singh/tangerine.nvim"
- :lazy false}]
+[{1 :udayvir-singh/tangerine.nvim
+    :lazy false}]
 

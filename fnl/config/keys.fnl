@@ -16,6 +16,8 @@
 (map :n "<Leader>;" ":" {:desc "Eval Expression"})
 (map :n :<Leader>< ":Telescope buffers<CR>" {:desc "Switch buffer"})
 (map :n "<Leader>`" ":" {:desc "Switch to last buffer"})
+(map :n "<Leader>q" vim.diagnostic.goto_next {:desc "Diagnostic loclist"})
+(map :n "<Esc>" ":noh<CR>" {:silent true})
 
 (local showtabline-value (vim.api.nvim_get_option :showtabline))
 
@@ -115,4 +117,4 @@
          {1 :<Leader>tm 2 ":TZMinimalist<CR>" :desc "Minimalist mode"}
          {1 :<Leader>tr 2 ":set number rnu!<CR>" :desc "Relative line numbers"}
          {1 :<Leader>tz 2 ":TZAtaraxis<CR>" :desc "Zen mode"}]
-        {:silent true})                                                                                        	
+        {:silent true})

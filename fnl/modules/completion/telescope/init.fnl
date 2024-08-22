@@ -11,6 +11,7 @@
                                                                                       :prompt_position :top
                                                                                       :vertical {:mirror false}
                                                                                       :width 0.87}}
+                                                         :border {}
                                                          :layout_strategy :flex
                                                          :prompt_prefix "   "
                                                          :selection_caret "  "
@@ -74,4 +75,4 @@
                  :nvim-telescope/telescope-ui-select.nvim
                  :nvim-telescope/telescope-file-browser.nvim
                  :dharmx/telescope-media.nvim
-                 :LukasPietzschmann/telescope-tabs]}]                                                                                                                                                                                                                      	
+                 :LukasPietzschmann/telescope-tabs]}]                                                                                                                                                                                                                                                                                                            	

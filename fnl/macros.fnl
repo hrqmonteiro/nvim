@@ -1,10 +1,12 @@
-(fn packages! [...]
+;; fennel-ls: macro-file
+
+(fn modules! [...]
   {:fnl/arglist [:category1 module1 ...]
    :fnl/docstring "blah blah blah"}
   (assert-compile (= :string (type (pick-values 1 ...)))
                   "first argument must be a string (category)"
                   (pick-values 1 ...))
-  (accumulate [(categories cat) (values {} nil) i v (ipairs [...])]
+  (accumulate [(categories cat) (values {} nil) _ v (ipairs [...])]
     (if (sym? v)
         (do
           (table.insert (. categories cat) (tostring v))
@@ -30,4 +32,4 @@
                         "packages! only allows strings (category) and modnames (sym)"
                         v))))
 
-{: packages!}
+{: modules!}

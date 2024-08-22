@@ -7,11 +7,12 @@
                 :ignore_focus {}
                 :refresh {:statusline 1000 :tabline 1000 :winbar 1000}
                 :section_separators {:left "" :right ""}
-                :theme :auto})                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       	
+                :theme :auto})
 
 (fn border [padding]
    {1 (fn [] " ") :color {:fg ""} : padding :separator ""})
 
+;; TODO: exclude TelescopePrompt from showing this
 (fn file-name-component []
   (let [file-name (vim.fn.expand "%:t")
                   modified vim.bo.modified
@@ -36,7 +37,7 @@
   (let [clients (vim.lsp.get_active_clients)
         server-names {}]
     (each [_ client (ipairs clients)] (table.insert server-names client.name))
-    (if (= (length server-names) 0) "No LSP" (table.concat server-names ", "))))
+    (if (= (length server-names) 0) " " (table.concat server-names ", "))))
 
 (fn git-branch-component []
   (let [handle (io.popen "git rev-parse --abbrev-ref HEAD 2>/dev/null")
@@ -50,8 +51,6 @@
 (local sections {:lualine_a [mode-component]
                  :lualine_b []
                  :lualine_c [
-                             (border {:right 1})
-                             "filesize"
                              (border {:right 1})
                              {1 :filetype
                               :icon {:align :right}
@@ -74,7 +73,7 @@
                              (border {:right 1})
                              "diff"]
                    
-                 :lualine_x [lsp-server-component (border {:right 1}) {1 :diagnostics :always_visible true :sections ["error" "warn" "info"]} (border {:right 1}) git-branch-component]
+                 :lualine_x [lsp-server-component {1 :diagnostics :always_visible false :sections ["error" "warn" "info"]} git-branch-component]
                  :lualine_y []
                  :lualine_z []})
 

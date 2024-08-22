@@ -100,6 +100,5 @@
                                    sections.buttons
                                    {:type :padding :val 1}
                                    sections.footer
-                                   {:type :padding :val 1}
-                                   ; sections.icon
-                                   ]}))}]
+                                   sections.icon]}))}]
+                                   
