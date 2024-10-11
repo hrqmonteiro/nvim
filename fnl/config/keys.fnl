@@ -62,35 +62,71 @@
          {1 :<Leader>fr 2 ":Telescope oldfiles<CR>" :desc "Recent files"}
          {1 :<Leader>fw 2 ":Telescope live_grep<CR>" :desc "Live grep"}
          {1 :<Leader>g :group :git}
-         {1 "<Leader>g[" 2 ":Gitsigns next_hunk<CR>" :desc "Jump to next hunk"}
-         {1 "<Leader>g]"
-          2 ":Gitsigns prev_hunk<CR>"
-          :desc "Jump to previous hunk"}
+         ;{1 "<Leader>g[" 2 ":Gitsigns next_hunk<CR>" :desc "Jump to next hunk"}
+         ;{1 "<Leader>g]"
+         ; 2 ":Gitsigns prev_hunk<CR>"
+         ; :desc "Jump to previous hunk"}
          {1 :<Leader>gB
-          2 ":Gitsigns blame_line<CR>"
-          :desc "Git blame (Gitsigns)"}
+          2 ":Gitsigns blame<CR>"
+          :desc "Neogit blame"}
          {1 :<Leader>gb
-          2 ":Telescope git_branches<CR>"
-          :desc "Git switch branch (Telescope)"}
-         {1 :<Leader>gD 2 ":G rm %<CR>" :desc "Git file delete (Fugitive)"}
-         {1 :<Leader>gF 2 ":G fetch<CR>" :desc "Git fetch (Fugitive)"}
-         {1 :<Leader>gg 2 ":Neogit<CR>" :desc "Neogit status"}
-         {1 :<Leader>gL 2 ":G log<CR>" :desc "Git log (Fugitive)"}
-         {1 :<Leader>gR
-          2 ":G checkout HEAD~ %<CR>"
-          :desc "Revert file (Fugitive)"}
-         {1 :<Leader>gr
-          2 ":Gitsigns reset_hunk<CR>"
-          :desc "Reset hunk at point"}
-         {1 :<Leader>gS
-          2 ":G add %<CR>"
-          :desc "Git stage this file (Fugitive)"}
-         {1 :<Leader>gs
-          2 ":Gitsigns stage_hunk<CR>"
-          :desc "Stage hunk at point"}
-         {1 :<Leader>gU
-          2 ":G reset %<CR>"
-          :desc "Git unstage this file (Fugitive)"}
+          2 ":Neogit branch<CR>"
+          :desc "Neogit switch branch"}
+
+         ;; create
+         {1 :<Leader>gc :group :create}
+         {1 :<Leader>gcb
+          2 ":lua require('neogit').action('branch', 'create_branch', {})()<CR>"
+          :desc "Branch"}
+         {1 :<Leader>gcc
+          2 ":lua require('neogit').action('commit', 'commit', { '--verbose', '--all' })()<CR>"
+          :desc "Commit"}
+         {1 :<Leader>gcf
+          2 ":lua require('neogit').action('commit', 'fixup', { '--verbose', '--all' })()<CR>"
+          :desc "Fixup"}
+         {1 :<Leader>gci
+          2 ":Octo issue create<CR>"
+          :desc "Issue"}
+         {1 :<Leader>gcp
+          2 ":Octo pr create<CR>"
+          :desc "Pull request"}
+         {1 :<Leader>gcr
+          2 ":!gh repo create<CR>"
+          :desc "Initialize repo"}
+         {1 :<Leader>gcR
+          2 ":!git clone"
+          :desc "Clone repo"}
+
+         {1 :<Leader>gC
+          2 ":!git clone"
+          :desc "Neogit clone"}
+         {1 :<Leader>gF
+          2 ":Neogit fetch<CR>"
+          :desc "Neogit fetch"}
+         {1 :<Leader>gg
+          2 ":Neogit<CR>"
+          :desc "Neogit status"}
+         {1 :<Leader>gG
+          2 ":Neogit<CR>"
+          :desc "Neogit status here"}
+
+          ;; list
+         {1 :<Leader>gl :group :list}
+         {1 :<Leader>gli
+          2 ":Octo issue list<CR>"
+          :desc "Octo list issues"}
+         {1 :<Leader>glp
+          2 ":Octo issue pull requests<CR>"
+          :desc "Octo list pull requests"}
+         {1 :<Leader>glr
+          2 ":Octo repo list<CR>"
+          :desc "Octo list repositories"}
+
+         {1 :<Leader>gL
+          2 ":Neogit log<CR>"
+          :desc "Neogit buffer log"}
+
+
          {1 :<Leader>h :group :help}
          {1 :<Leader>ht
           2 ":Telescope colorscheme<CR>"

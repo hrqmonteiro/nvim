@@ -21,6 +21,7 @@
                     "=='    _-'                        N E O V I M                         \\/   `=="
                     "\\   _-'                                                                `-_   /"
                     " `''                                                                      ``' "])
+
             (local hydra
                    ["                                   "
                     "                                   "
@@ -101,4 +102,3 @@
                                    {:type :padding :val 1}
                                    sections.footer
                                    sections.icon]}))}]
-                                   

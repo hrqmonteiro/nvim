@@ -277,9 +277,9 @@
                                          :cterm_color :45
                                          :icon "󱏿"
                                          :name :TailwindConfig}
-                    :tsconfig.json {:color "#cbcb41"
-                                    :cterm_color :185
-                                    :icon ""
+                    :tsconfig.json {:color "#20c2e3"
+                                    :cterm_color :45
+                                    :icon "󰛦"
                                     :name :TSConfig}
                     :unlicense {:color "#d0bf41"
                                 :cterm_color :185
@@ -1591,16 +1591,6 @@
                             :cterm_color :39
                             :icon ""
                             :name :Zorin}})
-            ((. (require :nvim-web-devicons) :setup) {:override {:Podfile {:color "#CB3E44"
-                                                                           :cterm_color :52
-                                                                           :icon ""
-                                                                           :name :Podfile}
-                                                                 :NeogitStatus {:color "#CB3E44"
-                                                                                :cterm_color :52
-                                                                                :icon ""}
-                                                                 :plist {:color "#6d8086"
-                                                                         :cterm_color :66
-                                                                         :icon ""
-                                                                         :name :Plist}}
+            ((. (require :nvim-web-devicons) :setup) {
                                                       :override_by_extension icons-by-file-extension
                                                       :override_by_filename icons-by-filename}))}]

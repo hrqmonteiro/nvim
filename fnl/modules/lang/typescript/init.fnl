@@ -1,1 +1,1 @@
-[:tsserver]
+[:ts_ls]

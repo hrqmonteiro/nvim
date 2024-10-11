@@ -1,5 +1,7 @@
 local pack = "tangerine" or "packer" or "paq" or "lazy"
 
+vim.g.maplocalleader = " "
+
 local function bootstrap(url, ref)
     local name = url:gsub(".*/", "")
     local path

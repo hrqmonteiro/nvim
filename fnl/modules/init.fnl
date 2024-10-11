@@ -3,7 +3,7 @@
 ;; Any package or language that you want loaded, leave it uncommented, those you don't want to use, comment it.
 ;; Some support flags, which have the following syntax: [package/language-name +flag], example: [go +templ], this will load go language server and also templ.
 
-(import-macros {: modules!} :fnl.macros)
+(import-macros {: modules!} :macros)
 
 (modules!
   :completion
@@ -11,48 +11,48 @@
   telescope
 
   :editor
-  ;;leap
+  ;leap
   ;;multiple-cursors
-  parinfer
+  ;parinfer
   tangerine
 
   :term
-  toggleterm
+  ;toggleterm
 
   :lang
-  bash
-  ;;cc
-  css
-  clojure
+  ;bash
+  ;cc
+  ;css
+  ;clojure
   ;;crystal
   ;;[dart +flutter]
-  [docker +compose]
+  ;[docker +compose]
   ;;elixir
-  fennel
-  [go +templ]
-  graphql
+  ; fennel
+  ;[go +templ]
+  ;;graphql
   ;;haskell
-  [html +emmet +htmx +xml]
-  json
+  ;;[html +emmet +htmx +xml]
+  ;json
   ;;[java +groovy]
   ;;kotlin
   ;;latex
-  lua
-  [markdown +mdx]
+  ;lua
+  ;;[markdown +mdx]
   ;;nim
   ;;nix
   ;;ocaml
-  org
-  ;;php
+  ;;org
+  ;php
   ;;python
   ;;ruby
-  rust
+  ;;rust
   ;;scala
   ;;solidity
-  sql
+  ;;sql
   ;;swift
-  tailwindcss
-  toml
+  ;tailwindcss
+  ;;toml
   [typescript
     +angular
     +astro
@@ -60,7 +60,7 @@
     +prisma
     +svelte
     +vue]
-  yaml
+  ;yaml
   ;;zig
 
   :lsp
@@ -73,38 +73,39 @@
   plenary
 
   :tools
-  conjure
-  colorizer
+  ; conjure
+  ;colorizer
   ;editorconfig
+  ;fugitive
   ;lazygit
-  [neogit +diffview]
+  ;[neogit +diffview]
   ;neorg
   ;[orgmode +bullets +headlines]
-  paperplanes
-  tmux-navigator
+  ; paperplanes
+  ;tmux-navigator
   treesitter
 
   :ui
-  alpha
+  ;alpha
   ;auto-dark-mode
   colorscheme
   ;;dressing
   gitsigns
   hydra
-  illuminate
+  ;;illuminate
   ;image
-  indent-lines
+  ;indent-lines
   lualine
-  neodim
+  mini-icons
+  ; neodim
   ;; neoscroll
   neo-tree
-  noice
+  ;;noice
   ;; pqf                            ;; Pretty quick fix window.  
-  smoothie
-  tint
-  todo-comments
-  trouble
+  ; smoothie
+  ;tint
+  ; todo-comments
+  ;trouble
   ;;visual-whitespace
-  web-devicons
   which-key)
-  ;;zen)
+  ; zen)

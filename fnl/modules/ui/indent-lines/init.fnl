@@ -1,6 +1,8 @@
 [{1 :lukas-reineke/indent-blankline.nvim
   :config (fn []
             ((. (require :ibl) :setup) {:enabled false
+                                        :indent {:char "│"}
+                                        :scope {:char "│"}
                                         :exclude {:buftypes [:terminal :nofile]
                                                   :filetypes [:help
                                                               :startify
